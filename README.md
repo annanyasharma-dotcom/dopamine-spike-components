@@ -30,6 +30,8 @@ npm run storybook        # dev server on http://localhost:6006
 npm run build-storybook  # static build in storybook-static/
 ```
 
+On every push to `main`, GitHub Actions builds Storybook and publishes it to GitHub Pages (enable once: **Settings → Pages → Source: GitHub Actions**). Pull requests run the same build as a check.
+
 Stories live under **Foundations / Icon**: `Playground`, `All Icons`, `Inherits Color`, `Sizes`.
 
 ### `<Icon />` component
