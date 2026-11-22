@@ -21,3 +21,33 @@ Each icon has two variants: a regular one and a `-bold` one. Phone has a `-fille
 | phone-telephone | `icons/phone-telephone.svg` | `icons/phone-telephone-filled.svg` |
 | plus | `icons/plus.svg` | `icons/plus-bold.svg` |
 | search | `icons/search.svg` | `icons/search-bold.svg` |
+
+## Storybook
+
+```bash
+npm install
+npm run storybook        # dev server on http://localhost:6006
+npm run build-storybook  # static build in storybook-static/
+```
+
+Stories live under **Foundations / Icon**: `Playground`, `All Icons`, `Inherits Color`, `Sizes`.
+
+### `<Icon />` component
+
+```tsx
+import { Icon } from './src';
+
+<Icon name="arrow-right" />
+<Icon name="check" bold size={20} color="#30A46C" />
+<Icon name="phone-telephone" bold label="Call" />   // bold → filled variant
+```
+
+| Prop | Type | Default | |
+|---|---|---|---|
+| `name` | `IconName` | — | One of the 13 icons above |
+| `bold` | `boolean` | `false` | Bold variant (`filled` for phone-telephone) |
+| `size` | `number` | `24` | Pixel size |
+| `color` | `string` | `currentColor` | Icons inherit text colour by default |
+| `label` | `string` | — | Accessible name; omit for decorative icons |
+
+The SVG files in `icons/` are untouched Figma exports; the component swaps their black fills/strokes for `currentColor` at load time.
