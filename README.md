@@ -24,20 +24,20 @@ Each icon has two variants: a regular one and a `-bold` one. Phone has a `-fille
 
 ## Hoomans (TATA 1mg characters)
 
-Transparent WebP illustrations in `hoomans/`, taken from *Section 2* of the same Figma file. Pose names match the Figma variant names. Each pose's usage note comes from its Figma component description and is shown in Storybook under **Illustrations / Hoomans**.
+Transparent WebP illustrations in `hoomans/`, taken from *Section 2* of the same Figma file. Pose names describe what each image shows; several Figma variant names didn't (e.g. phlebotomist "with coupon" shows no coupon), so the original Figma name is kept as `figmaVariant`. Each pose's usage note comes from its Figma component description and is shown in Storybook under **Illustrations / Hoomans**.
 
 | Character | Poses |
 |---|---|
-| `delivery` | with box, running, bike, store, front, bike-side, thumbs-up, confused |
-| `doctor` | front, with meds, with steth, with testubes, with patient |
-| `pharmacist` | with coupon, with prescription, with doc, with call |
-| `phlebotomist` | with coupon, with prescription, with doc, with call, pose5 |
+| `delivery` | with-box, running, bike, store, concerned *(Figma: front)*, bike-side, thumbs-up, confused |
+| `doctor` | arms-folded *(front)*, with-meds, with-stethoscope, in-lab *(with testubes)*, with-patient |
+| `pharmacist` | with-coupon, verifying-prescription *(with prescription)*, standing-with-medicine *(with doc)*, on-call *(with call)* |
+| `phlebotomist` | thumbs-up *(with coupon)*, with-syringe *(with prescription)*, home-visit-senior *(with doc)*, home-visit *(with call)*, vaccination *(pose5)* |
 
 ```tsx
 import { Hooman } from './src';
 
 <Hooman character="delivery" pose="bike-side" width={320} />
-<Hooman character="doctor" pose="with patient" height={180} alt="Doctor consultation" />
+<Hooman character="doctor" pose="with-patient" height={180} alt="Doctor consultation" />
 ```
 
 They're supporting imagery only: always pair them with copy that states the real status, offer or action. `alt` defaults to empty (decorative) for that reason.

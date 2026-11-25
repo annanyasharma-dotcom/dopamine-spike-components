@@ -7,7 +7,7 @@ type HoomanProps<C extends HoomanCharacterName> = Omit<
 > & {
   /** Which TATA 1mg character. */
   character: C;
-  /** Pose, named exactly as the Figma variant. */
+  /** Pose name describing what the image shows (see `figmaVariant` for the Figma name). */
   pose: HoomanPoseName<C>;
   /** Rendered width in px. Height follows the illustration's aspect ratio. */
   width?: number;

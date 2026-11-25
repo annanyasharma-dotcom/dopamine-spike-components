@@ -15,7 +15,7 @@ const meta = {
     docs: {
       description: {
         component:
-          'TATA 1mg character illustrations. Use them as supporting imagery only, always paired with copy that states the real status, offer or action. Pose names match the Figma variants.',
+          'TATA 1mg character illustrations. Use them as supporting imagery only, always paired with copy that states the real status, offer or action. Pose names describe what each image shows; where that differs from the Figma variant name, the Figma name is shown in orange.',
       },
     },
   },
@@ -25,7 +25,7 @@ export default meta;
 
 /** Pick any character and pose. */
 export const Playground: StoryObj<PlaygroundArgs> = {
-  args: { variant: 'delivery / with box', width: 280 },
+  args: { variant: 'delivery / with-box', width: 280 },
   argTypes: {
     variant: { control: 'select', options: variants },
     width: { control: { type: 'range', min: 80, max: 600, step: 20 } },
@@ -78,7 +78,12 @@ function UsageCard({ character, pose }: { character: HoomanCharacterName; pose: 
       <div style={{ padding: 16, display: 'flex', flexDirection: 'column', gap: 8 }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'baseline', gap: 8 }}>
           <strong style={{ fontSize: 15 }}>{pose.pose}</strong>
-          <span style={{ fontSize: 11, color: '#999' }}>Figma {pose.figmaNodeId}</span>
+          <span
+            title={`Figma node ${pose.figmaNodeId}`}
+            style={{ fontSize: 11, color: pose.figmaVariant === pose.pose ? '#999' : '#B25E09', whiteSpace: 'nowrap' }}
+          >
+            Figma: {pose.figmaVariant}
+          </span>
         </div>
         <p style={{ margin: 0, color: '#555', fontSize: 13 }}>{pose.shows}</p>
         <p style={{ margin: 0, fontSize: 13 }}>
