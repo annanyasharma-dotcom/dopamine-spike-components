@@ -22,6 +22,26 @@ Each icon has two variants: a regular one and a `-bold` one. Phone has a `-fille
 | plus | `icons/plus.svg` | `icons/plus-bold.svg` |
 | search | `icons/search.svg` | `icons/search-bold.svg` |
 
+## Hoomans (TATA 1mg characters)
+
+Transparent WebP illustrations in `hoomans/`, taken from *Section 2* of the same Figma file. Pose names match the Figma variant names. Each pose's usage note comes from its Figma component description and is shown in Storybook under **Illustrations / Hoomans**.
+
+| Character | Poses |
+|---|---|
+| `delivery` | with box, running, bike, store, front, bike-side, thumbs-up, confused |
+| `doctor` | front, with meds, with steth, with testubes, with patient |
+| `pharmacist` | with coupon, with prescription, with doc, with call |
+| `phlebotomist` | with coupon, with prescription, with doc, with call, pose5 |
+
+```tsx
+import { Hooman } from './src';
+
+<Hooman character="delivery" pose="bike-side" width={320} />
+<Hooman character="doctor" pose="with patient" height={180} alt="Doctor consultation" />
+```
+
+They're supporting imagery only: always pair them with copy that states the real status, offer or action. `alt` defaults to empty (decorative) for that reason.
+
 ## Storybook
 
 ```bash
